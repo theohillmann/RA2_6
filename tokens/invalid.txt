@@ -1,0 +1,6 @@
+( A B + C )              # termo extra
+( ( A B > ) ( X ) if )   # if sem else
+( 5 v )                  # store sem memid
+( while )                # while sem corpo
+( ( A B > ) ( X ) ( Y ) )  # if faltando palavra-chave
+( A B )                  # faltam parênteses
