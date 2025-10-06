@@ -1,0 +1,7 @@
+( 0 I )
+( 5 N )
+( 0 SUM )
+( ( I N < ) ( ( I 1 + ) I ) while )
+( 1 I )
+( SUM N + )
+( SUM )

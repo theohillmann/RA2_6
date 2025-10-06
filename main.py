@@ -1,5 +1,6 @@
 import os
 import json
+import argparse
 from build_grammar.build_grammar import construirGramatica
 from parsear.parsear import parsear
 from ler_tokens.ler_tokens import lerTokens
@@ -12,6 +13,8 @@ def tokens_to_expr_key(tokens):
 
 
 def main(tokens_path):
+    """Executa a análise sintática completa para o arquivo de tokens informado."""
+    print(f"Lendo tokens de: {tokens_path}\n")
 
     all_exprs = lerTokens(tokens_path)
     if not all_exprs:
@@ -31,7 +34,7 @@ def main(tokens_path):
         print("Tokens:", " ".join(tokens))
 
         try:
-            deriv = parsear(tokens, table, debug=False)
+            deriv = parsear(tokens, table)
             print(f"✅ Expressão aceita. Derivação com {len(deriv)} produções.")
 
             tree = gerarArvore(deriv, start_symbol=start)
@@ -62,5 +65,19 @@ def main(tokens_path):
 
 
 if __name__ == "__main__":
-    f = "tokens/test1.txt"
-    main(f)
+    parser = argparse.ArgumentParser(
+        description="Analisador Sintático LL(1) - Fase 2 (PUCPR)"
+    )
+    parser.add_argument(
+        "file",
+        type=str,
+        help="Caminho do arquivo de tokens (ex: tokens/test1.txt)",
+    )
+    parser.add_argument(
+        "--debug",
+        action="store_true",
+        help="Mostra o passo a passo da pilha e derivação durante o parsing.",
+    )
+
+    args = parser.parse_args()
+    main(args.file)
