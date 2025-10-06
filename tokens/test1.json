@@ -1,0 +1,158 @@
+{
+  "( int int + )": {
+    "label": "PROGRAM",
+    "children": [
+      {
+        "label": "LINES",
+        "children": [
+          {
+            "label": "LINE",
+            "children": [
+              {
+                "label": "SEXP",
+                "children": [
+                  {
+                    "label": "("
+                  },
+                  {
+                    "label": "FORM",
+                    "children": [
+                      {
+                        "label": "STACKTERM",
+                        "children": [
+                          {
+                            "label": "VALUE",
+                            "children": [
+                              {
+                                "label": "int"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "TAIL1",
+                        "children": [
+                          {
+                            "label": "STACKTERM",
+                            "children": [
+                              {
+                                "label": "VALUE",
+                                "children": [
+                                  {
+                                    "label": "int"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "label": "TAIL2",
+                            "children": [
+                              {
+                                "label": "OP",
+                                "children": [
+                                  {
+                                    "label": "+"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "label": ")"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "LINES"
+          }
+        ]
+      }
+    ]
+  },
+  "( int int - )": {
+    "label": "PROGRAM",
+    "children": [
+      {
+        "label": "LINES",
+        "children": [
+          {
+            "label": "LINE",
+            "children": [
+              {
+                "label": "SEXP",
+                "children": [
+                  {
+                    "label": "("
+                  },
+                  {
+                    "label": "FORM",
+                    "children": [
+                      {
+                        "label": "STACKTERM",
+                        "children": [
+                          {
+                            "label": "VALUE",
+                            "children": [
+                              {
+                                "label": "int"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "label": "TAIL1",
+                        "children": [
+                          {
+                            "label": "STACKTERM",
+                            "children": [
+                              {
+                                "label": "VALUE",
+                                "children": [
+                                  {
+                                    "label": "int"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "label": "TAIL2",
+                            "children": [
+                              {
+                                "label": "OP",
+                                "children": [
+                                  {
+                                    "label": "-"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "label": ")"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "LINES"
+          }
+        ]
+      }
+    ]
+  }
+}
