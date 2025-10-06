@@ -24,7 +24,7 @@ VALID_SINGLE_TOKENS = {
 }
 
 
-def read_tokens(input_file: str) -> List[List[str]]:
+def lerTokens(input_file: str) -> List[List[str]]:
     """
     Reads a file with ONE EXPRESSION PER LINE and returns
     a list of normalized token vectors (each ends with '$').
@@ -118,4 +118,4 @@ def _is_memory_identifier_lexeme(text: str) -> bool:
 
 if __name__ == "__main__":
     input_file_path = "/Users/theocoelho/Documents/academico/faculdade/10 periodo/compiladores/RA2_6/tokens/tokens.txt"
-    print(read_tokens(input_file_path))
+    print(lerTokens(input_file_path))
