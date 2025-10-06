@@ -1,5 +1,5 @@
-from utils import get_first_of_sequence
-from constants import NON_TERMINALS, PRODUCTIONS, EPS, START_SYMBOL, END
+from .utils import get_first_of_sequence
+from .constants import NON_TERMINALS, PRODUCTIONS, EPS, START_SYMBOL, END
 
 
 def calcularFollow(first_sets):

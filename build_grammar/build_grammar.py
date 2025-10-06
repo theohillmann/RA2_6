@@ -1,7 +1,7 @@
-from utils import get_first_of_sequence
-from calcular_first import calcularFirst
-from calcular_follow import calcularFollow
-from constants import NON_TERMINALS, PRODUCTIONS, EPS, TERMINALS, START_SYMBOL
+from .utils import get_first_of_sequence
+from .calcular_first import calcularFirst
+from .calcular_follow import calcularFollow
+from .constants import NON_TERMINALS, PRODUCTIONS, EPS, TERMINALS, START_SYMBOL
 
 
 def construirGramatica():

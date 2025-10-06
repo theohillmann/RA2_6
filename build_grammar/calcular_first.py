@@ -1,6 +1,6 @@
 from typing import Dict
-from utils import get_first_of_sequence
-from constants import NON_TERMINALS, TERMINALS, PRODUCTIONS, EPS
+from .utils import get_first_of_sequence
+from .constants import NON_TERMINALS, TERMINALS, PRODUCTIONS, EPS
 
 
 def calcularFirst():
