@@ -71,6 +71,15 @@ if __name__ == "__main__":
     
     # Aceita arquivo por linha de comando ou usa padrão
     if len(sys.argv) > 1:
+        if sys.argv[1] in ['--help', '-h', 'help']:
+            print("Uso: python main.py <arquivo_tokens>")
+            print("\nExemplo:")
+            print("  python main.py tokens/tokens.txt")
+            print("\nFormato do arquivo:")
+            print("  - Uma expressão RPN por linha")
+            print("  - Tokens separados por espaço")
+            print("  - Exemplo: ( 10 8 + )")
+            sys.exit(0)
         f = sys.argv[1]
     else:
         print("Uso: python main.py <arquivo_tokens>")
