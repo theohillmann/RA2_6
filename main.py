@@ -1,3 +1,8 @@
+# Integrantes do grupo (ordem alfabética):
+# Theo Hillmann Luiz Coelho - theohillmann
+#
+# Nome do grupo no Canvas: RA2_6
+
 import os
 import json
 from build_grammar.build_grammar import construirGramatica
@@ -62,5 +67,14 @@ def main(tokens_path):
 
 
 if __name__ == "__main__":
-    f = "tokens/test1.txt"
+    import sys
+    
+    # Aceita arquivo por linha de comando ou usa padrão
+    if len(sys.argv) > 1:
+        f = sys.argv[1]
+    else:
+        print("Uso: python main.py <arquivo_tokens>")
+        print("Usando arquivo padrão: tokens/test1.txt")
+        f = "tokens/test1.txt"
+    
     main(f)
