@@ -5,3 +5,7 @@
 ( 1 I )
 ( SUM N + )
 ( SUM )
+( 10 MAX )
+( ( SUM MAX > ) ( SUM ) ( MAX ) if )
+( MAX SUM - )
+( Result )

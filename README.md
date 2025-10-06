@@ -1,6 +1,68 @@
 # Analisador Sintático
 
+## Informações Institucionais
+- **Instituição**: PUC PR
+- **Curso**: Engenharia de Computação
+- **Disciplina**: Linguagens formais e Compiladores
+- **Professor**: Frank Alcantara
+- **Aluno**: Theo Hillmann Luiz Coelho
+- **Período**: 2025/2
+
+## Descrição
 Este projeto implementa um analisador sintático completo, incluindo construção de gramática, cálculo de conjuntos FIRST e FOLLOW, análise de tokens e geração de árvore sintática.
+
+## Documentação Formal
+
+### Gramática
+```
+E -> T E'
+E' -> + T E' | - T E' | ε
+T -> F T'
+T' -> * F T' | / F T' | % F T' | ^ F T' | ε
+F -> ( E ) | num | id | RES | MEM | X
+```
+
+### Conjuntos FIRST
+- FIRST(E) = { (, num, id, RES, MEM, X }
+- FIRST(E') = { +, -, ε }
+- FIRST(T) = { (, num, id, RES, MEM, X }
+- FIRST(T') = { *, /, %, ^, ε }
+- FIRST(F) = { (, num, id, RES, MEM, X }
+
+### Conjuntos FOLLOW
+- FOLLOW(E) = { $, ) }
+- FOLLOW(E') = { $, ) }
+- FOLLOW(T) = { +, -, $, ) }
+- FOLLOW(T') = { +, -, $, ) }
+- FOLLOW(F) = { *, /, %, ^, +, -, $, ) }
+
+### Tabela LL(1)
+| Não-terminal | ( | num | id | RES | MEM | X | + | - | * | / | % | ^ | ) | $ |
+|--------------|---|-----|-----|-----|-----|---|---|---|---|---|---|---|---|---|
+| E | E→TE' | E→TE' | E→TE' | E→TE' | E→TE' | E→TE' | | | | | | | | |
+| E' | | | | | | | E'→+TE' | E'→-TE' | | | | | E'→ε | E'→ε |
+| T | T→FT' | T→FT' | T→FT' | T→FT' | T→FT' | T→FT' | | | | | | | | |
+| T' | | | | | | | T'→ε | T'→ε | T'→*FT' | T'→/FT' | T'→%FT' | T'→^FT' | T'→ε | T'→ε |
+| F | F→(E) | F→num | F→id | F→RES | F→MEM | F→X | | | | | | | | |
+
+### Estruturas de Controle
+
+O analisador suporta as seguintes estruturas de controle:
+
+1. **Condicional (if)**
+```
+( condição then-expr else-expr if )
+```
+- `condição`: expressão booleana (usando operadores >, <, ==)
+- `then-expr`: expressão executada se condição for verdadeira
+- `else-expr`: expressão executada se condição for falsa
+
+2. **Loop (while)**
+```
+( condição expr while )
+```
+- `condição`: expressão booleana que controla o loop
+- `expr`: expressão executada enquanto condição for verdadeira
 
 ## Estrutura do Projeto
 
@@ -77,12 +139,9 @@ Os arquivos de tokens devem estar no formato txt e seguir a estrutura esperada p
 ## Testes
 
 O diretório `tokens/` contém arquivos de teste para validar o funcionamento do analisador:
-- `test1.txt`, `test2.txt`, `test3.txt`: Arquivos com as expressões a serem analisadas
+- `test1.txt`, `test2.txt`, `test3.txt`: Arquivos com expressões válidas para teste
+- `test4.txt`: Arquivo com casos de teste de erro para validar o tratamento de erros do analisador
 
-## Autores
 
-Theo Hillmann Luiz Coelho
 
 Projeto desenvolvido para a disciplina de Compiladores - PUCPR
-
-
